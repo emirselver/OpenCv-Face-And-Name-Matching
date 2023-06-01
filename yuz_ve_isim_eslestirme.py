@@ -1,22 +1,22 @@
 import cv2 
 import face_recognition
 
-#2.Tespit işlemi için yüz resimlerini yükleme
+#Tespit işlemi için yüz resimlerini yükleme
 messi_image = face_recognition.load_image_file("Images/messi.jpeg")
 ronaldo_image = face_recognition.load_image_file("Images/ronaldo.jpeg")
 
-#3.Yüklediğimiz resimleri kodlama
+#Yüklediğimiz resimleri kodlama
 
 messi_encoding = face_recognition.face_encodings(messi_image)[0]
 ronaldo_encoding = face_recognition.face_encodings(ronaldo_image)[0]
 
-#4.Kodlanan yüzleri ve isimleri eşleştirme
+#Kodlanan yüzleri ve isimleri eşleştirme
 
 encoding_faces = [messi_encoding,ronaldo_encoding]
 name_matching = ["Messi","Ronaldo"]
 
 
-#5.Tespit ve tanıma işleminin yapılacağı görüntüyü yükleme ve yüz tespit işlemi
+#Tespit ve tanıma işleminin yapılacağı görüntüyü yükleme ve yüz tespit işlemi
 img = cv2.imread("Images/messi_test.jpeg")
 
 rgb_img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
