@@ -15,7 +15,7 @@ ronaldo_encoding = face_recognition.face_encodings(ronaldo_image)[0]
 encoding_faces = [messi_encoding,ronaldo_encoding]
 name_matching = ["Messi","Ronaldo"]
 
-
+    
 #Tespit ve tanıma işleminin yapılacağı görüntüyü yükleme ve yüz tespit işlemi
 img = cv2.imread("Images/messi_test.jpeg")
 
@@ -33,6 +33,7 @@ for encoding_face_test in encoding_faces_test:
     if True in matching:
         index = matching.index(True)
         name = name_matching[index]
+        
 
     find_names.append(name)
 
